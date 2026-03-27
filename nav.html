@@ -1,0 +1,25 @@
+<nav id="mainNav">
+  <a class="nav-logo" href="javascript:void(0)" onclick="showPage('home');return false;">
+    <div class="nav-logo-box">FV</div>
+    <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="javascript:void(0)" onclick="showPage('home');return false;">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="showPageAndScroll('home','loan-options');return false;">Loan Options</a></li>
+    <li><a href="javascript:void(0)" onclick="showPageAndScroll('home','how-it-works');return false;">How It Works</a></li>
+    <li><a href="javascript:void(0)" onclick="showPageAndScroll('home','eligibility');return false;">Eligibility</a></li>
+    <li><a href="javascript:void(0)" onclick="showPageAndScroll('home','reviews');return false;">Reviews</a></li>
+    <li><a href="javascript:void(0)" onclick="showPageAndScroll('home','faq');return false;">FAQ</a></li>
+    <li><a class="nav-cta" href="javascript:void(0)" onclick="showPageAndScroll('home','apply-now');return false;">Apply Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="javascript:void(0)" onclick="showPage('home');closeMobile();return false;">Home</a>
+  <a href="javascript:void(0)" onclick="showPageAndScroll('home','loan-options');closeMobile();return false;">Loan Options</a>
+  <a href="javascript:void(0)" onclick="showPageAndScroll('home','how-it-works');closeMobile();return false;">How It Works</a>
+  <a href="javascript:void(0)" onclick="showPageAndScroll('home','eligibility');closeMobile();return false;">Eligibility</a>
+  <a href="javascript:void(0)" onclick="showPageAndScroll('home','reviews');closeMobile();return false;">Reviews</a>
+  <a href="javascript:void(0)" onclick="showPageAndScroll('home','faq');closeMobile();return false;">FAQ</a>
+  <a class="nav-cta" href="javascript:void(0)" onclick="scrollToId('apply-now');return false;">Apply Now</a>
+</div>
