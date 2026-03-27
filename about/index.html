@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us – FinancedVehicles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<script src="../main.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-box">FV</div>
+    <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../">Home</a></li>
+    <li><a href="../#loan-options">Loan Options</a></li>
+    <li><a href="../#how-it-works">How It Works</a></li>
+    <li><a href="../#eligibility">Eligibility</a></li>
+    <li><a href="../#reviews">Reviews</a></li>
+    <li><a href="../#faq">FAQ</a></li>
+    <li><a href="../#apply-now" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobile()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../" onclick="closeMobile()">Home <span class="mob-arrow">›</span></a>
+  <a href="../#loan-options" onclick="closeMobile()">Loan Options <span class="mob-arrow">›</span></a>
+  <a href="../#how-it-works" onclick="closeMobile()">How It Works <span class="mob-arrow">›</span></a>
+  <a href="../#eligibility" onclick="closeMobile()">Eligibility <span class="mob-arrow">›</span></a>
+  <a href="../#reviews" onclick="closeMobile()">Reviews <span class="mob-arrow">›</span></a>
+  <a href="../#faq" onclick="closeMobile()">FAQ <span class="mob-arrow">›</span></a>
+  <a href="../#apply-now" class="nav-cta" onclick="closeMobile()">Apply Now</a>
+</div>
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="banner-badges">
+    <span class="banner-badge">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="#ffb703" stroke="#ffb703" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Trusted by 50,000+ Borrowers
+    </span>
+    <span class="banner-badge green"><span class="pulse-sm"></span> 80+ Lending Partners Active</span>
+  </div>
+  <p class="section-label">About Us</p>
+  <h1>Financing Built for <em>Real People</em></h1>
+  <p>Our mission is simple, helping people access vehicle financing. Through our easy-to-use platform, you can connect with lenders actively reviewing applications that may fit your situation, with no unnecessary delays</p>
+  <div class="banner-chips">
+    <span class="chip">✓ Free to Use — Always</span>
+    <span class="chip">✓ No Hard Credit Pull</span>
+    <span class="chip">✓ All Credit Backgrounds</span>
+    <span class="chip">✓ Results in 90 Seconds</span>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1: MISSION / STATS ═══ -->
+<section class="about-section">
+  <div class="about-wrap">
+    <div class="about-header">
+      <p class="section-label">Our Mission</p>
+      <h2 class="section-title">A Simple, Secure Process to <span style="color:var(--cyan)">Get You Matched</span></h2>
+      <p class="section-sub" style="text-align:center;max-width:580px;margin:0 auto">We work with lending partners who process requests quickly so you can move forward without unnecessary delays</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="eyebrow">Who We Are</p>
+        <h2>Connecting Borrowers with <span>the Right Lenders</span></h2>
+        <p>FinancedVehicles.com is a free-to-use matching platform connecting borrowers with a network of 80+ vehicle finance lenders across the USA, UK, Canada, and Australia. We are not a lender — we never charge you a fee</p>
+        <p>Getting a vehicle loan shouldn't require perfect credit or hours on the phone. Submit once and we match you with lenders actively reviewing applications like yours — faster than a coffee break</p>
+        <div class="about-values">
+          <div class="about-val">
+            <div class="about-val-icon">🔒</div>
+            <div class="about-val-text">
+              <h4>No Hard Inquiry</h4>
+              <p>Checking your rate never touches your credit score</p>
+            </div>
+          </div>
+          <div class="about-val">
+            <div class="about-val-icon">⚡</div>
+            <div class="about-val-text">
+              <h4>Live Matching in 90 Seconds</h4>
+              <p>Your profile is matched against active lenders in real time</p>
+            </div>
+          </div>
+          <div class="about-val">
+            <div class="about-val-icon">🛡️</div>
+            <div class="about-val-text">
+              <h4>Your Data, Protected</h4>
+              <p>256-bit SSL encryption on every submission. We never sell your information</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">80+</div>
+          <div class="stat-desc"><h4>Lending Partners</h4><p>Active lenders across US, UK, CA &amp; AU</p></div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">50K+</div>
+          <div class="stat-desc"><h4>Borrowers Helped</h4><p>People connected to financing options that fit</p></div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">90s</div>
+          <div class="stat-desc"><h4>Live Matching Time</h4><p>From submission to matched lender results</p></div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">$0</div>
+          <div class="stat-desc"><h4>Cost to You</h4><p>Entirely free — no fees, no hidden charges, ever</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2: 3 STEPS ═══ -->
+<section class="steps-section">
+  <p class="section-label">How It Works</p>
+  <h2 class="section-title">Your Vehicle Loan Journey in <em style="color:var(--amber);font-style:italic">3 Simple Steps</em></h2>
+  <p class="section-sub">No lengthy forms, no waiting days, no back and forth. Your time is worth more than that</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num-badge">1</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3>Complete Your Details</h3>
+      <p>Fill out our simple online form in under 2 minutes — from your phone, tablet, or computer, wherever you are and whenever it suits you</p>
+      <p class="step-note">Fast, Simple and Hassle Free</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">2</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <h3>Get Matched Instantly</h3>
+      <p>Our system reviews your profile in real time and matches you with lenders actively approving applications today — responses typically return within minutes.</p>
+      <p class="step-note">Browse without consequence</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge">3</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>Choose Your Lender</h3>
+      <p>Review your matched options and select the lender that fits your needs — on your terms, with no pressure or obligation to proceed</p>
+      <p class="step-note">All credit profiles considered</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOAN TYPES ═══ -->
+<section class="loan-section">
+  <div style="max-width:1060px;margin:0 auto">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Financing Solutions for <em style="color:var(--amber);font-style:italic">Every Situation</em></h2>
+    <p class="section-sub">From standard vehicle loans to specialist credit products, our lender network covers the full spectrum of borrower needs</p>
+    <div class="loan-grid">
+      <div class="loan-card">
+        <div class="loan-card-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l3 5v3h-8V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Personal Loans for Vehicles</h3>
+        <p>Flexible personal loan options to purchase any vehicle — new or used, from a dealer or private seller</p>
+        <a href="../#apply-now" class="loan-learn">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="loan-card">
+        <div class="loan-card-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Bad Credit Loans</h3>
+        <p>Specialist lenders who look beyond your credit score and consider your full financial situation when reviewing your application</p>
+        <a href="../#apply-now" class="loan-learn">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="loan-card">
+        <div class="loan-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>Installment Loans</h3>
+        <p>Fixed monthly repayments with predictable terms — know exactly what you owe and when, with no surprises</p>
+        <a href="../#apply-now" class="loan-learn">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="loan-card">
+        <div class="loan-card-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <h3>Payday Alternatives</h3>
+        <p>Short-term bridging options through lenders offering fairer rates and more manageable terms than traditional payday products</p>
+        <a href="../#apply-now" class="loan-learn">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="loan-card">
+        <div class="loan-card-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+        <h3>Debt Consolidation</h3>
+        <p>Combine multiple repayments into one manageable monthly amount, often at a lower overall rate, freeing up cash flow</p>
+        <a href="../#apply-now" class="loan-learn">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="loan-card">
+        <div class="loan-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Emergency Financing</h3>
+        <p>When you need a vehicle urgently, our network includes lenders who can respond fast with same-day or next-day decisions</p>
+        <a href="../#apply-now" class="loan-learn">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+    <div class="loan-cta-row"><a href="../#apply-now" class="btn-amber">Check My Loan Options</a></div>
+  </div>
+</section>
+
+
+<!-- ═══ WHY CHOOSE US (7 reasons from PDF) ═══ -->
+<section class="why-section">
+  <div style="max-width:980px;margin:0 auto">
+    <p class="section-label">Why Choose Us</p>
+    <h2 class="section-title">7 Reasons We Make <em style="color:var(--amber)">Approval Easier</em></h2>
+    <p class="section-sub">We make getting a vehicle loan faster, simpler, and more transparent. One application — access to lenders reviewing requests right now</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-body">
+          <h4>Fast, Fully Online Application</h4>
+          <p>No branch visits, no paperwork, no appointments. Complete the entire application in minutes from any device — what used to take days now takes less time than a coffee break</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-body">
+          <h4>Access to Multiple Lenders</h4>
+          <p>One bank gives you one chance. Our platform connects your profile simultaneously to a wide network of verified direct lenders — more lenders mean far better odds than going it alone</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-body">
+          <h4>Real-Time Matching with Active Lenders</h4>
+          <p>The moment you submit, your profile is reviewed instantly and matched with lenders actively approving applications today. Responses typically return within minutes</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <div class="why-body">
+          <h4>Comprehensive Financial Evaluation</h4>
+          <p>A credit score is a starting point, not the whole story. Our platform looks beyond that single number, opening the door to lenders who consider what your finances look like today, not just the past</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">05</div>
+        <div class="why-body">
+          <h4>Private, Secure &amp; On Your Terms</h4>
+          <p>No offices to visit, no loan officers to sit across from. Your information is handled with care, and the experience is designed to feel straightforward and discreet from start to finish</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">06</div>
+        <div class="why-body">
+          <h4>Credit-Inclusive Options</h4>
+          <p>Lenders specialise in working with borrowers across all credit profiles — including those rebuilding credit or recovering from setbacks. They focus on your current situation, not your past</p>
+        </div>
+      </div>
+      <div class="why-card why-card-full">
+        <div class="why-num">07</div>
+        <div class="why-body">
+          <h4>Competitive Lending Marketplace</h4>
+          <p>Our marketplace brings lenders actively looking to approve qualified applicants — and that competition works in your favour, surfacing rates and terms that would never appear through a single bank application</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VALUES ═══ -->
+<section class="values-section">
+  <div class="values-header">
+    <p class="section-label">Our Values</p>
+    <h2 class="section-title">The Principles We <span style="color:var(--cyan)">Never Compromise</span></h2>
+    <p class="section-sub" style="text-align:center;max-width:540px;margin:0 auto 48px">Every decision we make comes back to four commitments we hold to every borrower on our platform</p>
+  </div>
+  <div class="values-grid">
+    <div class="val-card">
+      <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="val-body"><h4>Transparency</h4><p>No hidden fees, no confusing jargon. We tell you exactly what we do, how we earn, and what happens with your data — always</p></div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="val-body"><h4>Accessibility</h4><p>Credit challenges shouldn't lock people out of vehicle ownership. All backgrounds, all scores — you're welcome here</p></div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="val-body"><h4>Speed</h4><p>Live matching in under 90 seconds. We respect your time and have engineered every step to be as fast as possible</p></div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="val-body"><h4>Privacy</h4><p>Your data is protected with 256-bit SSL encryption at every step. We never sell your personal information to third-party marketers</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA STRIP ═══ -->
+<section class="cta-strip">
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:0">
+    <p class="section-label" style="text-align:center;margin-bottom:14px">Ready to Get Started?</p>
+    <h2 style="margin-bottom:36px">Find Out What You <em>Qualify For</em></h2>
+    <a href="../#apply-now" class="cta-btn-main">Use Our Services</a>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> 256-bit SSL Encrypted</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> No Hard Credit Pull</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> All Credit Types Welcome</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Free — No Hidden Fees</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <a href="../" style="display:flex;align-items:center;gap:4px;text-decoration:none">
+          <div class="nav-logo-box">FV</div>
+          <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+        </a>
+      </div>
+      <p>We work with a network of participating lenders who provide loan options for qualified applicants. Our platform helps simplify the process of finding financing that fits your situation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="../#loan-options">Loan Options</a>
+      <a href="../#how-it-works">How It Works</a>
+      <a href="../#eligibility">Eligibility</a>
+      <a href="../#reviews">Reviews</a>
+      <a href="../#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="../about/">About Us</a>
+      <a href="../terms-of-service/">Terms of Service</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+      <a href="../contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="disc">FinancedVehicles.com is a lead generation platform and not a lender. We connect users with a network of third-party lenders. We do not guarantee loan approval or specific rates. All credit types welcome. Representative APR varies by lender. All rights reserved. FinancedVehicles.com</p>
+  </div>
+</footer>
+
+</body>
+</html>

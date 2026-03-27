@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us – FinancedVehicles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#031d33;
+  --navy2:#041628;
+  --navy3:#071f38;
+  --cyan:#00b4d8;
+  --cyan2:#0096b7;
+  --cyan-glow:rgba(0,180,216,.45);
+  --amber:#ffb703;
+  --amber2:#e0a000;
+  --white:#ffffff;
+  --light:#f8f9fa;
+  --text:#495057;
+  --text-light:#6c7a8a;
+  --border:#dee2e6;
+  --glow-cyan:0 0 16px rgba(0,180,216,.55),0 0 32px rgba(0,180,216,.25);
+  --glow-amber:0 0 16px rgba(255,183,3,.5),0 0 32px rgba(255,183,3,.2);
+}
+html,body{scroll-behavior:smooth;margin:0;padding:0;width:100%;min-height:100%}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden;font-size:17px}
+
+/* ─── NAV ─── */
+#mainNav{position:sticky;top:0;z-index:999;background:var(--navy2);display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 52px;height:56px;box-shadow:0 2px 20px rgba(0,0,0,.6),0 1px 0 rgba(0,180,216,.2)}
+.nav-logo{display:flex;align-items:center;gap:4px;text-decoration:none}
+.nav-logo-box{width:32px;height:32px;background:linear-gradient(135deg,#00b4d8 0%,#0077a8 50%,#004d7a 100%);border:none;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:#000;flex-shrink:0;letter-spacing:2px;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.nav-logo-text{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;letter-spacing:.5px;color:#fff}
+.logo-vehicles{color:var(--amber)}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;margin-left:auto;padding-right:8px;white-space:nowrap;flex-wrap:nowrap}
+.nav-links a{color:#a0b4c8;font-size:14px;font-weight:500;text-decoration:none;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--amber);color:#1a0a00 !important;font-family:'Oswald',sans-serif;font-weight:700;font-size:14px;padding:8px 22px;border-radius:7px;text-decoration:none;letter-spacing:.5px;transition:all .2s;box-shadow:var(--glow-amber)}
+.nav-cta:hover{background:var(--amber2);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;background:none;border:none;padding:6px;width:36px;height:36px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s ease,opacity .3s ease,width .3s ease}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;width:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile overlay */
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:997;backdrop-filter:blur(2px)}
+.mobile-overlay.open{display:block}
+
+/* Mobile dropdown */
+.mobile-menu{
+  position:fixed;top:56px;left:0;right:0;
+  background:var(--navy2);
+  z-index:998;
+  padding:0 0 0;
+  flex-direction:column;
+  border-top:1px solid rgba(0,180,216,.25);
+  box-shadow:0 16px 40px rgba(0,0,0,.5);
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .38s cubic-bezier(.4,0,.2,1),padding .38s ease;
+  display:flex;
+}
+.mobile-menu.open{max-height:420px;padding:8px 0 20px}
+.mobile-menu a{
+  color:#a0b4c8;font-size:15px;font-weight:600;
+  text-decoration:none;
+  padding:13px 28px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s,background .2s;
+  display:flex;align-items:center;gap:10px;
+}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:#fff;background:rgba(0,180,216,.07)}
+.mobile-menu .mob-arrow{margin-left:auto;font-size:11px;opacity:.4}
+.mobile-menu .nav-cta{
+  margin:12px 20px 0;
+  border-radius:9px;
+  text-align:center;
+  justify-content:center;
+  padding:14px 22px;
+  background:var(--amber);
+  color:#1a0a00 !important;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:16px;letter-spacing:1px;
+  border-bottom:none !important;
+  box-shadow:var(--glow-amber);
+}
+.mobile-menu .nav-cta:hover{background:var(--amber2)}
+
+/* ─── PAGE BANNER ─── */
+.page-banner{background:var(--navy);padding:60px 64px 52px;text-align:center;position:relative;overflow:hidden}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 0%,rgba(0,180,216,.13) 0%,transparent 65%),radial-gradient(ellipse at 10% 100%,rgba(255,183,3,.08) 0%,transparent 55%);pointer-events:none}
+.page-banner .section-label{color:var(--cyan);font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 12px rgba(0,180,216,.5)}
+.page-banner h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:14px}
+.page-banner h1 em{color:var(--amber);font-style:italic;text-shadow:var(--glow-amber)}
+.page-banner p{font-size:17px;color:#7a9ab0;max-width:540px;margin:0 auto;line-height:1.7}
+.banner-badges{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.banner-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(0,180,216,.12);border:1px solid rgba(0,180,216,.35);color:#a0d4e4;font-size:13px;font-family:'Oswald',sans-serif;font-weight:500;letter-spacing:.5px;padding:6px 14px;border-radius:20px}
+.banner-badge.green{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:#6ee7a0}
+.pulse-sm{width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block;animation:pulse 1.8s ease-in-out infinite;box-shadow:0 0 6px #22c55e;flex-shrink:0}
+.banner-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#c0d4e4;font-size:14px;font-weight:500;padding:7px 16px;border-radius:20px}
+
+/* Quick action buttons */
+.quick-actions{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+.quick-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid rgba(0,180,216,.4);color:var(--cyan);background:rgba(0,180,216,.07);transition:all .2s}
+.quick-btn:hover{background:rgba(0,180,216,.15);border-color:var(--cyan)}
+.quick-btn.primary{background:var(--amber);border-color:var(--amber);color:#1a0a00;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:.5px;box-shadow:var(--glow-amber)}
+.quick-btn.primary:hover{background:var(--amber2);border-color:var(--amber2)}
+
+/* Form top note */
+.form-top-note{display:flex;align-items:center;gap:8px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:10px 14px;font-size:13px;color:#5a8a70;margin-bottom:22px;line-height:1.4}
+.form-top-note strong{color:#22c55e}
+
+/* ─── ABOUT STRIP ─── */
+.about-strip{background:#fff;padding:56px 64px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1060px;margin:0 auto;align-items:center}
+.about-text .eyebrow{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 12px rgba(0,180,216,.4)}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,38px);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:16px}
+.about-text h2 span{color:var(--cyan)}
+.about-text p{font-size:16px;color:var(--text-light);line-height:1.75;margin-bottom:14px}
+.about-values{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.about-val{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:var(--light);border-radius:12px;border:1px solid var(--border)}
+.about-val-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,rgba(0,180,216,.18),rgba(0,180,216,.06));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.about-val-text h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.about-val-text p{font-size:14px;color:var(--text-light);margin:0;line-height:1.55}
+
+/* Stats panel */
+.about-stats{background:var(--navy);border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:28px;box-shadow:0 8px 40px rgba(3,29,51,.4),inset 0 1px 0 rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.18)}
+.stat-item{display:flex;align-items:center;gap:18px}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:800;color:var(--amber);line-height:1;text-shadow:var(--glow-amber)}
+.stat-desc h4{font-family:'Oswald',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:.3px}
+.stat-desc p{font-size:13px;color:#5a7a90;margin:0;line-height:1.5}
+.stat-divider{height:1px;background:rgba(0,180,216,.12)}
+
+/* ─── CONTACT SECTION ─── */
+.contact-section{background:var(--light);padding:72px 64px}
+.contact-wrap{max-width:1060px;margin:0 auto}
+.contact-header{text-align:center;margin-bottom:52px}
+.section-label{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 12px rgba(0,180,216,.5)}
+h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(30px,3.8vw,46px);font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.1}
+.section-sub{font-size:17px;color:var(--text-light);line-height:1.65}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start;max-width:680px;margin:0 auto}
+
+/* Info cards */
+.contact-info{display:flex;flex-direction:column;gap:18px}
+.info-card{background:#fff;border-radius:14px;border:1.5px solid rgba(0,180,216,.2);padding:22px 22px;display:flex;align-items:flex-start;gap:16px;transition:border-color .2s,box-shadow .2s}
+.info-card:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan)}
+.info-icon{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,rgba(0,180,216,.2),rgba(0,180,216,.07));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.info-text h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.info-text p,.info-text a{font-size:15px;color:var(--text-light);margin:0;text-decoration:none;transition:color .2s}
+.info-text a:hover{color:var(--cyan)}
+.info-note{font-size:12px;color:#9ab0c0;margin-top:4px !important}
+
+/* Response time badge */
+.response-badge{background:var(--navy);border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:14px;border:1px solid rgba(0,180,216,.2)}
+.pulse-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;animation:pulse 1.8s ease-in-out infinite;box-shadow:0 0 8px #22c55e;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.35)}}
+.response-badge p{font-size:14px;color:#7a9ab0;margin:0;line-height:1.5}
+.response-badge p strong{color:#fff;display:block;font-size:15px;margin-bottom:2px}
+
+/* ─── FORM ─── */
+.contact-form-wrap{background:#fff;border-radius:20px;border:1.5px solid rgba(0,180,216,.2);padding:40px 36px;box-shadow:0 4px 32px rgba(0,0,0,.06)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.form-group:last-child{margin-bottom:0}
+.form-group label{font-size:14px;font-weight:600;color:var(--navy)}
+.form-group label span{color:#e05555;margin-left:2px}
+.form-control{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:9px;font-size:15.5px;font-family:'Inter',sans-serif;color:var(--text);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.form-control:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,180,216,.12)}
+.form-control::placeholder{color:#b0bec8}
+select.form-control{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236c7a8a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
+textarea.form-control{resize:vertical;min-height:120px;line-height:1.6}
+.form-submit{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.btn-submit{background:var(--amber);color:#1a0a00;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:1.2px;text-transform:uppercase;padding:15px 38px;border-radius:9px;border:none;cursor:pointer;transition:all .22s;box-shadow:var(--glow-amber);display:flex;align-items:center;gap:10px}
+.btn-submit:hover{background:var(--amber2);transform:translateY(-2px)}
+.btn-submit svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.form-secure{display:flex;align-items:center;gap:6px;font-size:13px;color:#9ab0c0}
+.form-secure svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* Form SSL note & consent */
+.form-ssl-note{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#8a9ab0;line-height:1.55;margin-bottom:16px;padding:10px 14px;background:rgba(0,180,216,.04);border:1px solid rgba(0,180,216,.12);border-radius:8px}
+.form-ssl-note svg{flex-shrink:0;margin-top:1px;stroke:#7a9ab0}
+.form-consent{font-size:12px;color:#8a9ab0;line-height:1.55;margin-top:12px;text-align:center}
+.form-success{display:none;text-align:center;padding:40px 20px}
+.form-success .success-icon{width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.15);border:2px solid rgba(34,197,94,.35);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px}
+.form-success h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.form-success p{font-size:15px;color:var(--text-light);max-width:340px;margin:0 auto}
+
+/* ─── TRUST STRIP ─── */
+.trust-strip{background:var(--navy2);padding:32px 64px;border-top:1px solid rgba(0,180,216,.12)}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.trust-item{display:flex;align-items:center;gap:10px;color:#7a9ab0;font-size:14px;font-weight:500}
+.trust-item svg{width:18px;height:18px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy2);padding:48px 64px 32px;border-top:1px solid rgba(0,180,216,.15)}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:44px}
+.footer-logo-wrap{display:flex;align-items:center;gap:4px;margin-bottom:14px}
+.footer-brand .nav-logo-text{display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;color:#fff;margin-bottom:0;letter-spacing:.5px}
+.footer-brand p{font-size:15px;color:#5a7a90;line-height:1.7;max-width:280px}
+.footer-col h4{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;color:var(--cyan)}
+.footer-col a{display:block;color:#5a7a90;font-size:15px;text-decoration:none;margin-bottom:9px;transition:color .2s}
+.footer-col a:hover{color:var(--amber)}
+.footer-bottom{border-top:1px solid rgba(0,180,216,.1);margin-top:32px;padding-top:22px;max-width:1100px;margin-left:auto;margin-right:auto}
+.footer-bottom .disc{font-size:13px;color:#2a4a5a;line-height:1.65;max-width:900px}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-stats{flex-direction:row;flex-wrap:wrap;gap:20px}
+  .stat-divider{display:none}
+  .stat-item{flex:1;min-width:140px}
+  #mainNav{padding:0 16px}
+  .page-banner,.about-strip,.contact-section,.trust-strip,footer{padding-left:28px;padding-right:28px}
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-brand{grid-column:1/-1}
+  .footer-brand p{max-width:100%}
+  footer{padding:36px 28px 28px}
+}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .contact-form-wrap{padding:28px 22px}
+  .form-submit{flex-direction:column;align-items:stretch}
+  .btn-submit{justify-content:center}
+  .trust-inner{gap:24px}
+}
+</style>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  var o=document.getElementById('mobileOverlay');
+  var h=document.querySelector('.hamburger');
+  if(!m||!o||!h)return;
+  var isOpen=m.classList.contains('open');
+  if(isOpen){m.classList.remove('open');o.classList.remove('open');h.classList.remove('open');}
+  else{m.classList.add('open');o.classList.add('open');h.classList.add('open');}
+}
+function closeMobile(){
+  var m=document.getElementById('mobileMenu');
+  var o=document.getElementById('mobileOverlay');
+  var h=document.querySelector('.hamburger');
+  if(m)m.classList.remove('open');
+  if(o)o.classList.remove('open');
+  if(h)h.classList.remove('open');
+}
+function submitForm(){
+  var required=['firstName','lastName','email','topic','message'];
+  var valid=true;
+  required.forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    if(!el.value.trim()){
+      el.style.borderColor='#e05555';
+      el.style.boxShadow='0 0 0 3px rgba(224,85,85,.12)';
+      valid=false;
+    } else {
+      el.style.borderColor='';
+      el.style.boxShadow='';
+    }
+  });
+  if(!valid)return;
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-box">FV</div>
+    <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../">Home</a></li>
+    <li><a href="../#loan-options">Loan Options</a></li>
+    <li><a href="../#how-it-works">How It Works</a></li>
+    <li><a href="../#eligibility">Eligibility</a></li>
+    <li><a href="../#reviews">Reviews</a></li>
+    <li><a href="../#faq">FAQ</a></li>
+    <li><a href="../#apply-now" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobile()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../">Home <span class="mob-arrow">›</span></a>
+  <a href="../#loan-options">Loan Options <span class="mob-arrow">›</span></a>
+  <a href="../#how-it-works">How It Works <span class="mob-arrow">›</span></a>
+  <a href="../#eligibility">Eligibility <span class="mob-arrow">›</span></a>
+  <a href="../#reviews">Reviews <span class="mob-arrow">›</span></a>
+  <a href="../#faq">FAQ <span class="mob-arrow">›</span></a>
+  <a href="../#apply-now" class="nav-cta">Apply Now</a>
+</div>
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="banner-badges">
+    <span class="banner-badge"><svg viewBox="0 0 24 24" width="13" height="13" fill="#ffb703" stroke="#ffb703" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Risk-Free — No Hard Credit Inquiry</span>
+    <span class="banner-badge green"><span class="pulse-sm"></span> Average Response Time: &lt; 60 Mins</span>
+  </div>
+  <h1>Expert Guidance for <em>Your Auto Financing</em></h1>
+  <p>Whether you're navigating credit challenges or tracking a pending application, our lending advisors provide the clarity you need without the high-pressure sales tactics</p>
+  <div class="banner-chips">
+    <span class="chip">✓ Risk-Free Rate Checks</span>
+    <span class="chip">✓ Application Status Support</span>
+    <span class="chip">✓ Credit-Inclusive Financing</span>
+    <span class="chip">✓ Lender Negotiation Support</span>
+  </div>
+</section>
+
+
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact-form">
+  <div class="contact-wrap">
+    <div class="contact-header">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Connect With Our Support Team</h2>
+      <p class="section-sub">From document verification to dealership strategy, we're here to help you cross the finish line Inquiries submitted during standard business hours typically receive a response within an hour</p>
+
+    </div>
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-wrap">
+
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name <span>*</span></label>
+              <input type="text" id="firstName" class="form-control" placeholder="Jane" required/>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name <span>*</span></label>
+              <input type="text" id="lastName" class="form-control" placeholder="Smith" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span>*</span></label>
+            <input type="email" id="email" class="form-control" placeholder="jane@example.com" required/>
+          </div>
+          <div class="form-group">
+            <label for="topic">Nature of Inquiry <span>*</span></label>
+            <select id="topic" class="form-control" required>
+              <option value="" disabled selected>Select a category…</option>
+              <option>Rate &amp; Eligibility Inquiry</option>
+              <option>Application Status Update</option>
+              <option>Underwriting &amp; Documents</option>
+              <option>Refinance Consultation</option>
+              <option>General Support</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span>*</span></label>
+            <textarea id="message" class="form-control" placeholder="Briefly describe your situation so we can direct your inquiry to the right advisor." required></textarea>
+          </div>
+
+          <div class="form-group form-submit">
+            <button type="button" class="btn-submit" onclick="submitForm()">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </div>
+          <p class="form-consent">By clicking 'Send Message,' you agree to be contacted by our team regarding your inquiry Your information is never sold to third-party marketers</p>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h3>Inquiry Received</h3>
+          <p>Your inquiry has been assigned to an advisor Expect a follow-up to your inbox shortly during standard business hours</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <a href="../" style="display:flex;align-items:center;gap:4px;text-decoration:none">
+          <div class="nav-logo-box">FV</div>
+          <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+        </a>
+      </div>
+      <p>We work with a network of participating lenders who provide loan options for qualified applicants. Our platform helps simplify the process of finding financing that fits your situation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="../#loan-options">Loan Options</a>
+      <a href="../#how-it-works">How It Works</a>
+      <a href="../#eligibility">Eligibility</a>
+      <a href="../#reviews">Reviews</a>
+      <a href="../#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="../about/">About Us</a>
+      <a href="../terms-of-service/">Terms of Service</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+      <a href="../contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="disc">FinancedVehicles.com is a lead generation platform and not a lender. We connect users with a network of third-party lenders. We do not guarantee loan approval or specific rates. All credit types welcome. Representative APR varies by lender. All rights reserved. FinancedVehicles.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
