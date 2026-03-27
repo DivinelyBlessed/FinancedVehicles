@@ -1,2 +1,0 @@
-# FinancedVehicles
-Financed Vehicles
