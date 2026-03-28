@@ -495,3 +495,129 @@ span.logo-vehicles{color:var(--amber)}
   .banner-chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .chip{text-align:center}
 }
+
+/* ════════════════════════════════════════
+   GLASSMORPHISM LAYER
+   Additive only — no layout or color changes
+   ════════════════════════════════════════ */
+
+/* Nav — solid, no glass */
+#mainNav{
+  background:var(--navy2);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.mobile-menu{
+  background:var(--navy2);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+
+/* Loan cards — dark section */
+.loan-card{
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(0,180,216,.2);
+}
+.loan-card:hover,.loan-card.open{
+  background:rgba(0,180,216,.08);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+/* Step cards — light section */
+.step-card{
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1.5px solid rgba(0,180,216,.22);
+  box-shadow:0 4px 24px rgba(0,180,216,.07),0 1px 0 rgba(255,255,255,.9) inset;
+}
+.step-card:hover{
+  background:rgba(255,255,255,.88);
+}
+
+/* Eligibility panels — dark section */
+.elig-panel{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1.5px solid rgba(0,180,216,.25);
+}
+
+/* Testimonial cards — solid white */
+.t-card{
+  background:#ffffff;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  border:1px solid #e8ecf0;
+  color:var(--text);
+}
+.t-text{color:var(--text)}
+.t-author-row{border-top:1px solid #f0f4f8}
+.t-author-name{color:var(--navy)}
+.t-approved{color:var(--cyan)}
+
+/* FAQ items — light section */
+.faq-item{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1.5px solid rgba(0,180,216,.18);
+}
+.faq-item:hover,.faq-item.open{
+  background:rgba(255,255,255,.92);
+}
+
+/* About value cards — light section */
+.about-val{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+/* About stats box — dark card */
+.about-stats{
+  background:rgba(3,29,51,.65);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(0,180,216,.2);
+}
+
+/* Why & Values cards — light section */
+.why-card,.val-card{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.why-card:hover,.val-card:hover{
+  background:rgba(255,255,255,.9);
+}
+
+/* Info cards — inner pages */
+.info-card{
+  background:rgba(248,249,250,.8);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+/* Privacy badges */
+.privacy-badge{
+  background:rgba(248,249,250,.8);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+/* Banner badges */
+.banner-badge{
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+/* FV mobile menu */
+.fv-mob{
+  background:rgba(8,16,30,.82);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
