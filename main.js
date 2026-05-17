@@ -6,16 +6,10 @@ function getHeaderOffset() {
 }
 
 function scrollToId(id) {
-  // Ensure home page is active
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const home = document.getElementById('page-home');
   if (home) home.classList.add('active');
-  // Close any open mobile menus
-  const mob1 = document.getElementById('mobileMenu');
-  if (mob1) mob1.style.display = 'none';
-  const mob2 = document.getElementById('fvMob');
-  if (mob2) mob2.style.display = 'none';
-  // Scroll with header offset after paint
+  closeMobile();
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       const el = document.getElementById(id);
@@ -45,10 +39,7 @@ function showPageAndScroll(name, id) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
-  const mob1 = document.getElementById('mobileMenu');
-  if (mob1) mob1.style.display = 'none';
-  const mob2 = document.getElementById('fvMob');
-  if (mob2) mob2.style.display = 'none';
+  closeMobile();
   setTimeout(function () {
     const el = document.getElementById(id);
     if (!el) return;
@@ -61,41 +52,19 @@ function scrollToSection(id) { scrollToId(id); }
 
 function toggleMenu() {
   const m = document.getElementById('mobileMenu');
-  const o = document.getElementById('mobileOverlay');
   const h = document.querySelector('.hamburger');
   if (!m) return;
-  // Support both class-based pattern (about page) and display pattern (home page)
-  if (m.classList.contains('open') !== undefined && o) {
-    // Class-based pattern: toggle .open on menu, overlay, and hamburger
-    const isOpen = m.classList.contains('open');
-    if (isOpen) {
-      m.classList.remove('open');
-      if (o) o.classList.remove('open');
-      if (h) h.classList.remove('open');
-    } else {
-      m.classList.add('open');
-      if (o) o.classList.add('open');
-      if (h) h.classList.add('open');
-    }
-  } else {
-    // Display-based pattern
-    m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
-  }
+  const isOpen = m.style.display === 'flex';
+  m.style.display = isOpen ? 'none' : 'flex';
+  if (h) h.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
 }
 
 function closeMobile() {
   const m = document.getElementById('mobileMenu');
-  const o = document.getElementById('mobileOverlay');
   const h = document.querySelector('.hamburger');
   if (!m) return;
-  // Support both patterns
-  if (o) {
-    m.classList.remove('open');
-    if (o) o.classList.remove('open');
-    if (h) h.classList.remove('open');
-  } else {
-    m.style.display = 'none';
-  }
+  m.style.display = 'none';
+  if (h) h.setAttribute('aria-expanded', 'false');
 }
 
 /* ─── FAQ & LOAN ACCORDIONS ─── */
@@ -103,8 +72,15 @@ function closeMobile() {
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
   const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    const b = i.querySelector('.faq-q');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
 function toggleLoan(event, card) {
