@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Car Loan Blog &amp; Guides – FinancedVehicles</title>
+<meta name="description" content="Expert guides, tips, and advice on car loans, bad credit financing, refinancing, and vehicle purchasing. All credit types covered."/>
+<link rel="canonical" href="https://financedvehicles.com/blog/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#031d33;
+  --navy2:#041628;
+  --navy3:#071f38;
+  --cyan:#00b4d8;
+  --cyan2:#0096b7;
+  --cyan-glow:rgba(0,180,216,.45);
+  --amber:#ffb703;
+  --amber2:#e0a000;
+  --white:#ffffff;
+  --dark-bg:#0c1825;
+  --text:#2d3748;
+  --text-light:#4a5568;
+  --text-muted:#7a9ab0;
+  --text-pale:#90a8be;
+  --glow-cyan:0 0 16px rgba(0,180,216,.55),0 0 32px rgba(0,180,216,.25);
+  --glow-amber:0 0 16px rgba(255,183,3,.5),0 0 32px rgba(255,183,3,.2);
+}
+html,body{scroll-behavior:smooth;margin:0;padding:0;width:100%;min-height:100%}
+body{font-family:'Inter',sans-serif;background:#f0f4f8;color:var(--text);line-height:1.65;overflow-x:hidden;font-size:16px}
+
+/* ─── NAV ─── */
+#mainNav{position:fixed;top:0;left:0;right:0;z-index:999;background:#0a1f35;display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 52px;height:56px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-box{width:32px;height:32px;background:linear-gradient(135deg,#00b4d8 0%,#0077a8 50%,#004d7a 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:#000;flex-shrink:0;letter-spacing:2px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.nav-logo-text{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;letter-spacing:.5px;color:#fff}
+.nav-logo-text .logo-vehicles{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;margin-left:auto;padding-right:8px}
+.nav-links a{color:#a0b4c8;font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--amber)!important;color:#1a0a00!important;font-family:'Oswald',sans-serif;font-weight:700;font-size:14px;padding:8px 22px;border-radius:7px;text-decoration:none;letter-spacing:.5px;transition:all .2s;box-shadow:var(--glow-amber)}
+.nav-cta:hover{background:var(--amber2)!important;transform:translateY(-1px)}
+
+/* Dropdown */
+.fv-dropdown-wrap{position:relative}
+@keyframes dropdownIn{0%{opacity:0;transform:translateX(-50%) translateY(-8px)}100%{opacity:1;transform:translateX(-50%) translateY(0)}}
+.fv-dropdown{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(10,22,40,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(0,180,216,.22);border-radius:10px;min-width:220px;padding:8px 0 10px;list-style:none;margin:0;z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.55)}
+.fv-dropdown::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.fv-dropdown::after{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid rgba(0,180,216,.5)}
+.fv-dropdown li{border-bottom:1px solid rgba(255,255,255,.06)}
+.fv-dropdown li:last-child{border-bottom:none}
+.fv-dropdown li a{display:block;padding:11px 20px;color:rgba(255,255,255,.78);font-size:13.5px;font-weight:500;text-decoration:none;transition:all .18s;white-space:nowrap;border-left:3px solid transparent;text-align:center}
+.fv-dropdown li a:hover{background:rgba(255,183,3,.08);color:var(--amber);border-left-color:var(--amber)}
+.fv-dropdown-wrap:hover .fv-dropdown{display:block;animation:dropdownIn .2s ease forwards}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:#041628;z-index:998;padding:20px 28px 28px;flex-direction:column;gap:12px;border-top:1px solid rgba(0,180,216,.2)}
+.mobile-menu a{color:#a0b4c8;font-size:16px;font-weight:600;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s}
+.mobile-menu a:hover{color:var(--amber)}
+.mobile-menu .nav-cta{text-align:center;margin-top:8px;padding:13px;display:block}
+
+/* ─── BLOG HERO HEADER ─── */
+.blog-header{background:linear-gradient(135deg,#041628 0%,#0a1f35 45%,#0c2840 100%);padding:100px 0 60px;position:relative;overflow:hidden}
+.blog-header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,180,216,.08) 0%,transparent 70%);pointer-events:none}
+.blog-header-inner{max-width:1180px;margin:0 auto;padding:0 32px}
+.blog-header-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,216,.12);border:1px solid rgba(0,180,216,.35);color:var(--cyan);font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:20px}
+.blog-header h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,62px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:16px;letter-spacing:-.5px}
+.blog-header h1 em{color:var(--amber);font-style:italic}
+.blog-header p{font-size:17px;color:var(--text-pale);max-width:580px;line-height:1.7;margin-bottom:32px}
+.blog-search{display:flex;gap:0;max-width:480px;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,180,216,.3),0 8px 24px rgba(0,0,0,.3)}
+.blog-search input{flex:1;background:rgba(255,255,255,.06);border:none;outline:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;padding:14px 18px;min-width:0}
+.blog-search input::placeholder{color:rgba(255,255,255,.35)}
+.blog-search button{background:var(--cyan);border:none;padding:14px 22px;cursor:pointer;color:#fff;font-size:17px;transition:background .2s;flex-shrink:0}
+.blog-search button:hover{background:var(--cyan2)}
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb{background:#e8eef5;border-bottom:1px solid #d8e2ec;padding:10px 0}
+.breadcrumb-inner{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:8px;font-size:13px;color:#7a9ab0}
+.breadcrumb a{color:var(--cyan2);text-decoration:none;font-weight:500}
+.breadcrumb a:hover{color:var(--cyan)}
+.breadcrumb span{color:#aabbcc}
+
+/* ─── MAIN LAYOUT ─── */
+.blog-main{max-width:1180px;margin:0 auto;padding:48px 32px 72px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+
+/* ─── FEATURED POST ─── */
+.featured-section{margin-bottom:48px}
+.section-label{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.section-label h2{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;color:#1a2a3a;text-transform:uppercase}
+.section-label-line{flex:1;height:2px;background:linear-gradient(90deg,var(--cyan) 0%,transparent 100%);border-radius:2px}
+
+.featured-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.10);display:grid;grid-template-columns:1fr 1fr;transition:transform .2s,box-shadow .2s}
+.featured-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.15)}
+.featured-card-img{position:relative;background:linear-gradient(135deg,#0a1f35 0%,#0c2a44 100%);min-height:280px;display:flex;align-items:flex-end;padding:28px}
+.featured-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.featured-img-overlay{position:relative;z-index:1}
+.featured-cat-badge{display:inline-block;background:var(--amber);color:#1a0a00;font-family:'Oswald',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:5px;margin-bottom:10px}
+.featured-card-body{padding:32px 36px;display:flex;flex-direction:column;justify-content:center}
+.featured-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--text-muted);margin-bottom:14px}
+.featured-meta .dot{width:4px;height:4px;background:var(--cyan);border-radius:50%;flex-shrink:0}
+.featured-card-body h3{font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,30px);font-weight:800;line-height:1.2;color:#0d1f2d;margin-bottom:12px}
+.featured-card-body p{font-size:15px;color:var(--text-light);line-height:1.7;margin-bottom:24px}
+.read-more-btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:.5px;text-transform:uppercase;padding:11px 24px;border-radius:8px;text-decoration:none;transition:all .2s;width:fit-content}
+.read-more-btn:hover{background:var(--cyan);transform:translateX(3px)}
+.read-more-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.read-more-btn:hover svg{transform:translateX(3px)}
+
+/* ─── CATEGORY SECTIONS ─── */
+.cat-section{margin-bottom:44px}
+.cat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.cat-title-group{display:flex;align-items:center;gap:12px}
+.cat-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.cat-icon.ic-credit{background:rgba(0,180,216,.12);color:var(--cyan)}
+.cat-icon.ic-first{background:rgba(255,183,3,.12);color:var(--amber2)}
+.cat-icon.ic-refi{background:rgba(34,197,94,.12);color:#22c55e}
+.cat-icon.ic-tips{background:rgba(139,92,246,.12);color:#8b5cf6}
+.cat-icon.ic-emergency{background:rgba(239,68,68,.12);color:#ef4444}
+.cat-title-group h2{font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;letter-spacing:.5px;color:#1a2a3a;text-transform:uppercase}
+.cat-see-all{font-size:13px;color:var(--cyan2);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:5px;transition:color .2s}
+.cat-see-all:hover{color:var(--cyan)}
+.cat-rule{width:100%;height:1px;background:linear-gradient(90deg,rgba(0,180,216,.3) 0%,transparent 80%);margin-bottom:20px}
+
+/* Article cards grid */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cards-grid.two-col{grid-template-columns:repeat(2,1fr)}
+
+.article-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.13)}
+.article-card-thumb{position:relative;height:150px;background:linear-gradient(135deg,#0a1f35,#0c2a44);overflow:hidden}
+.article-card-thumb img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:transform .4s,opacity .4s}
+.article-card:hover .article-card-thumb img{transform:scale(1.05);opacity:.85}
+.article-card-thumb .card-cat{position:absolute;bottom:10px;left:12px;background:var(--amber);color:#1a0a00;font-family:'Oswald',sans-serif;font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:4px}
+.article-card-thumb .card-cat.cyan{background:var(--cyan);color:#041628}
+.article-card-thumb .card-cat.green{background:#22c55e;color:#052b16}
+.article-card-thumb .card-cat.purple{background:#8b5cf6;color:#fff}
+.article-card-thumb .card-cat.red{background:#ef4444;color:#fff}
+.article-card-body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column}
+.article-card-meta{font-size:11px;color:var(--text-muted);margin-bottom:8px;display:flex;gap:8px}
+.article-card-body h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;line-height:1.35;color:#0d1f2d;margin-bottom:8px;flex:1}
+.article-card-body p{font-size:13px;color:var(--text-light);line-height:1.6;margin-bottom:14px}
+.article-card-link{font-size:12.5px;color:var(--cyan2);font-weight:600;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s;margin-top:auto}
+.article-card-link:hover{color:var(--cyan)}
+.article-card-link svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── SIDEBAR ─── */
+.blog-sidebar{display:flex;flex-direction:column;gap:28px;position:sticky;top:76px}
+
+/* Sidebar apply CTA */
+.sidebar-cta{background:linear-gradient(135deg,#041628 0%,#0a2240 100%);border:1px solid rgba(0,180,216,.25);border-radius:14px;padding:28px 24px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.sidebar-cta h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.2}
+.sidebar-cta p{font-size:14px;color:var(--text-pale);line-height:1.65;margin-bottom:20px}
+.sidebar-cta-btn{display:block;background:var(--amber);color:#1a0a00;font-family:'Oswald',sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;text-transform:uppercase;padding:14px 20px;border-radius:9px;text-decoration:none;transition:all .2s;box-shadow:var(--glow-amber)}
+.sidebar-cta-btn:hover{background:var(--amber2);transform:translateY(-2px)}
+.sidebar-cta-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:10px}
+
+/* Sidebar categories widget */
+.sidebar-widget{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.sidebar-widget h4{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#1a2a3a;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--cyan);display:flex;align-items:center;gap:8px}
+.cat-list{list-style:none;display:flex;flex-direction:column;gap:4px}
+.cat-list li a{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;text-decoration:none;color:#2d3748;font-size:14px;font-weight:500;transition:all .18s}
+.cat-list li a:hover{background:rgba(0,180,216,.06);color:var(--cyan2);padding-left:16px}
+.cat-list li a .cat-count{background:#e8eef5;color:#7a9ab0;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;min-width:28px;text-align:center}
+.cat-list li a:hover .cat-count{background:rgba(0,180,216,.12);color:var(--cyan2)}
+
+/* Popular posts */
+.popular-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+.popular-item{display:flex;gap:12px;align-items:flex-start}
+.popular-num{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#fff;font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.popular-item a{font-size:13.5px;font-weight:600;color:#0d1f2d;text-decoration:none;line-height:1.4;transition:color .18s}
+.popular-item a:hover{color:var(--cyan2)}
+
+/* Tags cloud */
+.tags-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:#e8eef5;color:#4a6a80;font-size:12px;font-weight:600;padding:6px 13px;border-radius:20px;text-decoration:none;transition:all .18s}
+.tag:hover{background:rgba(0,180,216,.12);color:var(--cyan2)}
+
+/* ─── NEWSLETTER STRIP ─── */
+.newsletter-strip{background:linear-gradient(135deg,#041628 0%,#071f38 50%,#041628 100%);padding:60px 32px;position:relative;overflow:hidden;margin-top:16px}
+.newsletter-strip::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.08) 0%,transparent 70%);pointer-events:none}
+.newsletter-inner{max-width:620px;margin:0 auto;text-align:center}
+.newsletter-inner h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2}
+.newsletter-inner h2 em{color:var(--amber);font-style:italic}
+.newsletter-inner p{font-size:15px;color:var(--text-pale);margin-bottom:28px;line-height:1.7}
+.newsletter-form{display:flex;gap:0;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,180,216,.3),0 8px 24px rgba(0,0,0,.4)}
+.newsletter-form input{flex:1;background:rgba(255,255,255,.07);border:none;outline:none;color:#fff;font-family:'Inter',sans-serif;font-size:15px;padding:15px 18px;min-width:0}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.35)}
+.newsletter-form button{background:var(--amber);border:none;padding:15px 28px;cursor:pointer;color:#1a0a00;font-family:'Oswald',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;transition:background .2s;flex-shrink:0}
+.newsletter-form button:hover{background:var(--amber2)}
+.newsletter-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:12px}
+
+/* ─── FOOTER ─── */
+.blog-footer{background:#041628;border-top:1px solid rgba(0,180,216,.12);padding:36px 32px;text-align:center}
+.blog-footer-inner{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px}
+.blog-footer-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.blog-footer-logo-box{width:28px;height:28px;background:linear-gradient(135deg,#00b4d8,#004d7a);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:#000}
+.blog-footer-logo span{font-family:'Oswald',sans-serif;font-weight:700;font-size:18px;color:#fff;letter-spacing:.5px}
+.blog-footer-logo .logo-vehicles{color:var(--cyan)}
+.blog-footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+.blog-footer-links a{font-size:13px;color:#7a9ab0;text-decoration:none;transition:color .2s}
+.blog-footer-links a:hover{color:var(--amber)}
+.blog-footer-copy{font-size:12px;color:rgba(255,255,255,.22)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .blog-main{grid-template-columns:1fr;gap:40px}
+  .blog-sidebar{position:static}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .featured-card{grid-template-columns:1fr}
+  .featured-card-img{min-height:220px}
+}
+@media(max-width:700px){
+  #mainNav{padding:0 16px 0 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .mobile-menu.open{display:flex}
+  .blog-header{padding:80px 0 48px}
+  .blog-main{padding:32px 16px 48px}
+  .cards-grid{grid-template-columns:1fr}
+  .cards-grid.two-col{grid-template-columns:1fr}
+  .newsletter-form{flex-direction:column}
+  .newsletter-form input,.newsletter-form button{width:100%}
+  .blog-header-inner,.newsletter-strip,.blog-footer{padding-left:16px;padding-right:16px}
+  .breadcrumb-inner{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a class="nav-logo" href="../">
+    <div class="nav-logo-box">FV</div>
+    <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+  </a>
+  <ul class="nav-links">
+    <li class="fv-dropdown-wrap">
+      <a href="../#loan-options" class="fv-dropdown-trigger">Loan Options</a>
+      <ul class="fv-dropdown">
+        <li><a href="../bad-credit-car-loans/">Bad Credit Loan</a></li>
+        <li><a href="../no-credit-car-loans/">First Time Borrowers</a></li>
+        <li><a href="../emergency-car-loans/">Emergency Loan</a></li>
+      </ul>
+    </li>
+    <li class="fv-dropdown-wrap">
+      <a href="../#vehicle-type" class="fv-dropdown-trigger">Vehicle Type</a>
+      <ul class="fv-dropdown">
+        <li><a href="../">Cars</a></li>
+        <li><a href="../">Motorcycle</a></li>
+        <li><a href="../">Buses</a></li>
+        <li><a href="../">Trucks</a></li>
+      </ul>
+    </li>
+    <li><a href="../#eligibility">Eligibility</a></li>
+    <li><a href="./" style="color:#fff;">Guides &amp; Blog</a></li>
+    <li><a href="../#reviews">Reviews</a></li>
+    <li><a class="nav-cta" href="../#apply-now">Apply Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../#loan-options">Loan Options</a>
+  <a href="../#vehicle-type">Vehicle Type</a>
+  <a href="../#eligibility">Eligibility</a>
+  <a href="./">Guides &amp; Blog</a>
+  <a href="../#reviews">Reviews</a>
+  <a class="nav-cta" href="../#apply-now">Apply Now</a>
+</div>
+
+<!-- ─── BLOG HEADER ─── -->
+<section class="blog-header">
+  <div class="blog-header-inner">
+    <div class="blog-header-tag">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Guides, Tips &amp; Insights
+    </div>
+    <h1>Car Loan <em>Advice</em> You<br>Can Actually Use</h1>
+    <p>From bad credit strategies to refinancing guides — practical, no-fluff car finance articles written for real Australians.</p>
+    <form class="blog-search" onsubmit="return false;">
+      <input type="text" placeholder="Search guides, e.g. &quot;bad credit car loan&quot;…" aria-label="Search blog"/>
+      <button type="submit" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ─── BREADCRUMB ─── -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../">Home</a>
+    <span>›</span>
+    <span>Blog &amp; Guides</span>
+  </div>
+</nav>
+
+<!-- ─── MAIN CONTENT + SIDEBAR ─── -->
+<div class="blog-main">
+
+  <!-- ══ MAIN COLUMN ══ -->
+  <main>
+
+    <!-- Featured Post -->
+    <section class="featured-section">
+      <div class="section-label">
+        <h2>Featured Guide</h2>
+        <div class="section-label-line"></div>
+      </div>
+      <a href="../bad-credit-car-loans/" class="featured-card" style="text-decoration:none;">
+        <div class="featured-card-img">
+          <img src="../assets/images/headers/car-header.jpg" alt="Bad credit car loan guide"/>
+          <div class="featured-img-overlay">
+            <span class="featured-cat-badge">Bad Credit</span>
+          </div>
+        </div>
+        <div class="featured-card-body">
+          <div class="featured-meta">
+            <span>May 2026</span>
+            <span class="dot"></span>
+            <span>8 min read</span>
+            <span class="dot"></span>
+            <span>By FV Team</span>
+          </div>
+          <h3>How to Get a Car Loan With Bad Credit in 2026</h3>
+          <p>Your credit score doesn't have to be perfect to get behind the wheel. We break down exactly how lenders assess bad credit applications and the steps you can take today to maximise your approval chances.</p>
+          <span class="read-more-btn">
+            Read Guide
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <!-- Category: Bad Credit Loans -->
+    <section class="cat-section">
+      <div class="cat-header">
+        <div class="cat-title-group">
+          <div class="cat-icon ic-credit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <h2>Bad Credit Loans</h2>
+        </div>
+        <a class="cat-see-all" href="../bad-credit-car-loans/">
+          See all
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="cat-rule"></div>
+      <div class="cards-grid">
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Bad credit loan tips"/>
+            <span class="card-cat">Bad Credit</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>May 2026</span><span>·</span><span>6 min</span></div>
+            <h3>5 Steps to Boost Your Approval Odds When You Have Bad Credit</h3>
+            <p>Practical actions you can take right now before submitting your application.</p>
+            <a class="article-card-link" href="../bad-credit-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Lender options bad credit"/>
+            <span class="card-cat">Bad Credit</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Apr 2026</span><span>·</span><span>5 min</span></div>
+            <h3>Which Lenders Accept Bad Credit Car Loan Applications?</h3>
+            <p>Not all lenders are created equal — here's how to find the ones that work with your situation.</p>
+            <a class="article-card-link" href="../bad-credit-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Credit score car loan"/>
+            <span class="card-cat">Bad Credit</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Apr 2026</span><span>·</span><span>4 min</span></div>
+            <h3>What Credit Score Do You Actually Need for a Car Loan?</h3>
+            <p>The real numbers, what they mean, and what to do if yours isn't there yet.</p>
+            <a class="article-card-link" href="../bad-credit-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category: First-Time Buyers -->
+    <section class="cat-section">
+      <div class="cat-header">
+        <div class="cat-title-group">
+          <div class="cat-icon ic-first">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h2>First-Time Buyers</h2>
+        </div>
+        <a class="cat-see-all" href="../no-credit-car-loans/">
+          See all
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="cat-rule"></div>
+      <div class="cards-grid two-col">
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="First car loan guide"/>
+            <span class="card-cat cyan">First-Time</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>May 2026</span><span>·</span><span>7 min</span></div>
+            <h3>Your Complete Guide to Getting Your First Car Loan</h3>
+            <p>No credit history? No problem. Here's what lenders look for when you're starting from scratch.</p>
+            <a class="article-card-link" href="../no-credit-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="First time borrower mistakes"/>
+            <span class="card-cat cyan">First-Time</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Apr 2026</span><span>·</span><span>5 min</span></div>
+            <h3>7 Mistakes First-Time Car Loan Borrowers Make (And How to Avoid Them)</h3>
+            <p>Learn from others' errors before you sign anything.</p>
+            <a class="article-card-link" href="../no-credit-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category: Refinancing -->
+    <section class="cat-section">
+      <div class="cat-header">
+        <div class="cat-title-group">
+          <div class="cat-icon ic-refi">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <h2>Refinancing</h2>
+        </div>
+        <a class="cat-see-all" href="../refinance-car-loan/">
+          See all
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="cat-rule"></div>
+      <div class="cards-grid">
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Refinance car loan guide"/>
+            <span class="card-cat green">Refinancing</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>May 2026</span><span>·</span><span>6 min</span></div>
+            <h3>When Is the Right Time to Refinance Your Car Loan?</h3>
+            <p>Timing matters more than you think. Here are the key signals to watch for.</p>
+            <a class="article-card-link" href="../refinance-car-loan/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Lower car loan rate"/>
+            <span class="card-cat green">Refinancing</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Apr 2026</span><span>·</span><span>5 min</span></div>
+            <h3>How to Get a Lower Interest Rate on Your Existing Car Loan</h3>
+            <p>Step-by-step guide to negotiating or switching to a better deal.</p>
+            <a class="article-card-link" href="../refinance-car-loan/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Refinance benefits"/>
+            <span class="card-cat green">Refinancing</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Mar 2026</span><span>·</span><span>4 min</span></div>
+            <h3>Refinancing After Rejection: Can a Declined Loan Hurt You?</h3>
+            <p>What actually happens to your credit file after a knock-back — and your next move.</p>
+            <a class="article-card-link" href="../after-rejection-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category: Emergency Loans -->
+    <section class="cat-section">
+      <div class="cat-header">
+        <div class="cat-title-group">
+          <div class="cat-icon ic-emergency">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h2>Emergency &amp; Urgent Loans</h2>
+        </div>
+        <a class="cat-see-all" href="../emergency-car-loans/">
+          See all
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="cat-rule"></div>
+      <div class="cards-grid two-col">
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Emergency car loan fast"/>
+            <span class="card-cat red">Emergency</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>May 2026</span><span>·</span><span>5 min</span></div>
+            <h3>Need a Car Loan Fast? Here's How Same-Day Approval Works</h3>
+            <p>The fastest path from application to approval when you can't afford to wait.</p>
+            <a class="article-card-link" href="../emergency-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Emergency loan bad credit"/>
+            <span class="card-cat red">Emergency</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Apr 2026</span><span>·</span><span>6 min</span></div>
+            <h3>Emergency Car Loans With Bad Credit: Your Options Explained</h3>
+            <p>Urgent need, rough credit history — here's what's still available to you.</p>
+            <a class="article-card-link" href="../emergency-car-loans/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category: Car Loan Tips -->
+    <section class="cat-section">
+      <div class="cat-header">
+        <div class="cat-title-group">
+          <div class="cat-icon ic-tips">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h2>Car Loan Tips</h2>
+        </div>
+      </div>
+      <div class="cat-rule"></div>
+      <div class="cards-grid">
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Car loan comparison tips"/>
+            <span class="card-cat purple">Tips</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>May 2026</span><span>·</span><span>5 min</span></div>
+            <h3>How to Compare Car Loans Without Damaging Your Credit Score</h3>
+            <p>The smart way to shop around — soft enquiries vs. hard pulls explained.</p>
+            <a class="article-card-link" href="../">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Used car loan guide"/>
+            <span class="card-cat purple">Tips</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Apr 2026</span><span>·</span><span>6 min</span></div>
+            <h3>Used Car vs. New Car Loan: Which Is Easier to Get Approved For?</h3>
+            <p>Lenders treat new and used vehicles differently. Here's what that means for your rate.</p>
+            <a class="article-card-link" href="../used-car-financing/">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="article-card">
+          <div class="article-card-thumb">
+            <img src="../assets/images/headers/car-header.jpg" alt="Secured vs unsecured loan"/>
+            <span class="card-cat purple">Tips</span>
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta"><span>Mar 2026</span><span>·</span><span>4 min</span></div>
+            <h3>Secured vs Unsecured Car Loans: Which One Is Right for You?</h3>
+            <p>The key differences, risk factors, and which option offers the better rate.</p>
+            <a class="article-card-link" href="../">
+              Read More
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="blog-sidebar">
+
+    <!-- Apply CTA -->
+    <div class="sidebar-cta">
+      <h3>Check Your Loan Options in Minutes</h3>
+      <p>Free to apply. No impact on your credit score. 80+ lenders reviewed instantly.</p>
+      <a class="sidebar-cta-btn" href="../#apply-now">Check My Options — Free</a>
+      <p class="sidebar-cta-note">No obligation · All credit types welcome</p>
+    </div>
+
+    <!-- Categories -->
+    <div class="sidebar-widget">
+      <h4>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        Categories
+      </h4>
+      <ul class="cat-list">
+        <li><a href="../bad-credit-car-loans/">Bad Credit Loans <span class="cat-count">8</span></a></li>
+        <li><a href="../no-credit-car-loans/">First-Time Buyers <span class="cat-count">5</span></a></li>
+        <li><a href="../refinance-car-loan/">Refinancing <span class="cat-count">6</span></a></li>
+        <li><a href="../emergency-car-loans/">Emergency Loans <span class="cat-count">4</span></a></li>
+        <li><a href="../used-car-financing/">Used Car Loans <span class="cat-count">5</span></a></li>
+        <li><a href="../personal-loan-for-car/">Personal Loans <span class="cat-count">3</span></a></li>
+        <li><a href="../after-rejection-car-loans/">After Rejection <span class="cat-count">3</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Popular Posts -->
+    <div class="sidebar-widget">
+      <h4>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Most Read
+      </h4>
+      <ul class="popular-list">
+        <li class="popular-item">
+          <span class="popular-num">1</span>
+          <a href="../bad-credit-car-loans/">How to Get a Car Loan With Bad Credit in 2026</a>
+        </li>
+        <li class="popular-item">
+          <span class="popular-num">2</span>
+          <a href="../emergency-car-loans/">Need a Car Loan Fast? Same-Day Approval Explained</a>
+        </li>
+        <li class="popular-item">
+          <span class="popular-num">3</span>
+          <a href="../refinance-car-loan/">When Is the Right Time to Refinance?</a>
+        </li>
+        <li class="popular-item">
+          <span class="popular-num">4</span>
+          <a href="../no-credit-car-loans/">Your First Car Loan: Complete Beginner's Guide</a>
+        </li>
+        <li class="popular-item">
+          <span class="popular-num">5</span>
+          <a href="../after-rejection-car-loans/">Car Loan Rejected? Here's Your Next Step</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tags -->
+    <div class="sidebar-widget">
+      <h4>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Topics
+      </h4>
+      <div class="tags-cloud">
+        <a class="tag" href="../bad-credit-car-loans/">Bad Credit</a>
+        <a class="tag" href="../no-credit-car-loans/">No Credit</a>
+        <a class="tag" href="../refinance-car-loan/">Refinancing</a>
+        <a class="tag" href="../emergency-car-loans/">Emergency</a>
+        <a class="tag" href="../used-car-financing/">Used Cars</a>
+        <a class="tag" href="../personal-loan-for-car/">Personal Loan</a>
+        <a class="tag" href="../after-rejection-car-loans/">After Rejection</a>
+        <a class="tag" href="../">Car Finance</a>
+        <a class="tag" href="../">Interest Rates</a>
+        <a class="tag" href="../">Approval Tips</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /blog-main -->
+
+<!-- ─── NEWSLETTER STRIP ─── -->
+<section class="newsletter-strip">
+  <div class="newsletter-inner">
+    <h2>Get <em>Car Finance Tips</em><br>Straight to Your Inbox</h2>
+    <p>Weekly guides, rate updates, and approval tips — no spam, unsubscribe anytime.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address…" aria-label="Email address"/>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-note">By subscribing you agree to our Privacy Policy. Unsubscribe at any time.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="blog-footer">
+  <div class="blog-footer-inner">
+    <a class="blog-footer-logo" href="../">
+      <div class="blog-footer-logo-box">FV</div>
+      <span>FINANCED <span class="logo-vehicles">VEHICLES</span></span>
+    </a>
+    <div class="blog-footer-links">
+      <a href="../">Home</a>
+      <a href="./">Blog</a>
+      <a href="../bad-credit-car-loans/">Bad Credit Loans</a>
+      <a href="../refinance-car-loan/">Refinancing</a>
+      <a href="../emergency-car-loans/">Emergency Loans</a>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+      <a href="../terms-of-service/">Terms of Service</a>
+    </div>
+    <p class="blog-footer-copy">&copy; 2026 FinancedVehicles. All rights reserved. FinancedVehicles is a lead generation platform, not a lender.</p>
+  </div>
+</footer>
+
+</body>
+</html>

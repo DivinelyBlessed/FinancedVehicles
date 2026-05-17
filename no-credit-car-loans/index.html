@@ -20,16 +20,16 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,800;0,900;1,800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../shared.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="site-nav" role="navigation" aria-label="Main navigation">
+<nav id="mainNav">
   <a class="nav-logo" href="../">
     <div class="nav-logo-box">FV</div>
-    <span class="nav-logo-text">Financed<span class="logo-vehicles">Vehicles</span></span>
+    <span class="nav-logo-text">FINANCED <span class="logo-vehicles">VEHICLES</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="../">Home</a></li>
@@ -38,13 +38,11 @@
     <li><a href="../used-car-financing/">Used Cars</a></li>
     <li><a href="../refinance-car-loan/">Refinance</a></li>
     <li><a href="../about/">About</a></li>
-    <li><a class="nav-cta" href="#apply" data-open-quiz>Apply Now</a></li>
+    <li><a class="nav-cta" href="#apply">Apply Now</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-menu" role="navigation">
+<div class="mobile-menu" id="mobileMenu">
   <a href="../">Home</a>
   <a href="../bad-credit-car-loans/">Bad Credit Loans</a>
   <a href="../no-credit-car-loans/">No Credit Loans</a>
@@ -54,7 +52,7 @@
   <a href="../personal-loan-for-car/">Personal Loan for Car</a>
   <a href="../refinance-car-loan/">Refinance</a>
   <a href="../about/">About</a>
-  <a class="nav-cta" href="#apply" data-open-quiz>Apply Now →</a>
+  <a class="nav-cta" href="#apply">Apply Now</a>
 </div>
 
 <!-- HERO -->
@@ -134,7 +132,7 @@
 <!-- WHO QUALIFIES -->
 <section class="content-section bg-alt">
   <div class="content-inner">
-    <div class="two-col-grid">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start">
       <div>
         <span class="section-label">REQUIREMENTS</span>
         <h2 class="section-title">What You Need to Apply</h2>
@@ -256,29 +254,18 @@
     <h2 class="section-title">Apply for Your First Car Loan</h2>
     <p class="section-sub">Zero credit history is not a barrier. 60-second form. No credit impact. Real lenders, real approvals.</p>
     <div class="apply-box">
-      <div style="text-align:center;padding:1.5rem 0">
-        <button class="btn-quiz-trigger" data-open-quiz>Check My Eligibility — Free →</button>
-        <div class="mac-trust" style="justify-content:center;margin-top:1.2rem">
-          <span>🔒 Secure &amp; Private</span>
-          <span>⚡ 60-Second Quiz</span>
-          <span>✓ No Credit Impact</span>
-        </div>
+      <div class="mobile-apply-cta" id="mobile-apply-cta" style="display:none">
+        <h3>Get Your First Car Loan</h3>
+        <p>Tap below to start — no credit history required.</p>
+        <a href="https://superpersonalfinder.com/?aff143428" target="_blank" rel="noopener noreferrer">Apply Now — It's Free →</a>
+        <div class="mac-trust"><span>🔒 Secure</span><span>⚡ 60 Seconds</span><span>✓ No Credit Impact</span></div>
       </div>
+      <iframe id="application-form" src="https://iframe.global/iframe?style=2&owner=USAIFRAME&tracking_code=aff143439" width="100%" frameborder="0" scrolling="no" title="Car loan application form" style="min-height:600px;display:block"></iframe>
     </div>
     <p class="no-sell">We never sell your information. <a href="../privacy-policy/" style="color:inherit">Privacy Policy</a> · <a href="../terms-of-service/" style="color:inherit">Terms</a></p>
   </div>
 </section>
-<script>
-window.quizConfig = {
-  steps: [
-    { question: 'What best describes your income?', options: ['Employed full-time', 'Self-employed / Freelance', 'Student / Part-time', 'Benefits or Pension'] },
-    { question: 'Why do you have no credit history?', options: ["I'm new to the country", "I've always paid cash", "I'm a first-time borrower", "I've never needed credit"] },
-    { question: 'How long have you been at your current address?', options: ['Less than 6 months', '6 months to 2 years', 'More than 2 years', 'I move frequently'] }
-  ],
-  tip: "No credit isn't the same as bad credit. A stable address history and steady income can replace a thin credit file — lenders just need to see reliability somewhere in your profile.",
-  redirectUrl: 'https://superpersonalfinder.com/?aff143428'
-};
-</script>
+<script src="https://iframe.global/embed.js" async defer data-iframe-id="application-form" data-header-offset="64" data-scroll-duration="300"></script>
 
 <!-- INTERNAL LINKS -->
 <section class="internal-links">
@@ -339,6 +326,6 @@ window.quizConfig = {
   </div>
 </footer>
 
-<script src="../shared.js" defer></script>
+<script src="../main.js" defer></script>
 </body>
 </html>

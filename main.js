@@ -120,42 +120,72 @@ window.addEventListener('click', function (e) {
   }
 });
 
-/* ─── IFRAME: MOBILE SWITCHER & RESIZE ─── */
+/* ─── QUIZ MODAL ─── */
 
 document.addEventListener('DOMContentLoaded', function () {
-  const f = document.getElementById('application-form');
-  const mobileCta = document.getElementById('mobile-apply-cta');
-  const wrap = document.getElementById('iframe-wrap');
+  const cfg = window.quizConfig;
+  if (!cfg) return;
 
-  if (!f || !mobileCta || !wrap) return;
+  // Build modal DOM
+  const modal = document.createElement('div');
+  modal.id = 'quiz-modal';
+  modal.innerHTML =
+    '<div class="quiz-overlay"></div>' +
+    '<div class="quiz-box">' +
+      '<button class="quiz-close" aria-label="Close">✕</button>' +
+      '<div class="quiz-body"></div>' +
+    '</div>';
+  document.body.appendChild(modal);
 
-  // On mobile, hide the iframe and show the direct CTA link instead
-  const isMobile = window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if (isMobile) {
-    f.style.display = 'none';
-    mobileCta.style.display = 'block';
-    wrap.style.border = 'none';
-    wrap.style.boxShadow = 'none';
-    wrap.style.background = 'transparent';
+  let step = 0;
+
+  function renderStep() {
+    const body = modal.querySelector('.quiz-body');
+    if (step < cfg.steps.length) {
+      const s = cfg.steps[step];
+      body.innerHTML =
+        '<p class="quiz-step-label">Step ' + (step + 1) + ' of ' + cfg.steps.length + '</p>' +
+        '<h3 class="quiz-question">' + s.question + '</h3>' +
+        '<div class="quiz-options">' +
+          s.options.map(function (o) {
+            return '<button class="quiz-opt">' + o + '</button>';
+          }).join('') +
+        '</div>';
+      body.querySelectorAll('.quiz-opt').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          body.querySelectorAll('.quiz-opt').forEach(function (b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+          setTimeout(function () { step++; renderStep(); }, 380);
+        });
+      });
+    } else {
+      body.innerHTML =
+        '<div class="quiz-tip">💡 ' + cfg.tip + '</div>' +
+        '<p class="quiz-redirecting">Finding your best options…</p>';
+      setTimeout(function () { window.location.href = cfg.redirectUrl; }, 1800);
+    }
   }
 
-  // Resize iframe via postMessage from the iframe provider
-  window.addEventListener('message', function (e) {
-    if (!f) return;
-    var h = 0;
-    if (e.data && e.data.type === 'setHeight' && typeof e.data.height === 'number') h = e.data.height;
-    if (e.data && e.data.frameHeight) h = e.data.frameHeight;
-    if (e.data && e.data.height) h = e.data.height;
-    if (h > 100 && h < 1200) f.style.height = h + 'px';
+  window.openQuiz = function () {
+    step = 0;
+    renderStep();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeQuiz = function () {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  modal.querySelector('.quiz-overlay').addEventListener('click', closeQuiz);
+  modal.querySelector('.quiz-close').addEventListener('click', closeQuiz);
+
+  // Wire all [data-open-quiz] triggers
+  document.querySelectorAll('[data-open-quiz]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      openQuiz();
+    });
   });
 });
-
-/* ─── IFRAME HEIGHT REPORTER (to parent window) ─── */
-
-function sendHeight() {
-  const h = document.documentElement.scrollHeight;
-  window.parent.postMessage({ type: 'setHeight', height: h }, '*');
-}
-const ro = new ResizeObserver(sendHeight);
-ro.observe(document.body);
-sendHeight();
